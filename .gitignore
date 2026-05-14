@@ -1,0 +1,34 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Local env files (NEVER commit secrets)
+.env*
+!.env.example
+
+# Build/runtime logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Next.js build cache (we don't need this; the `out/` folder is the deployable artifact)
+/.next/
+/next-env.d.ts
+
+# Note: /out/ is INTENTIONALLY tracked. It is the static-export artifact uploaded to the server.

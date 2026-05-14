@@ -1,0 +1,443 @@
+{
+  "home": {
+    "hero": {
+      "title": "Herzlich willkommen in unserem geistlichen Zuhause in Köln",
+      "subtitle": "Ein Ort der Anbetung, der Gemeinschaft und des lebendigen Wortes Gottes.",
+      "quote": " \"Der Kleinste wird zu Tausend werden und der Geringste zu einem mächtigen Volk. Ich, der HERR, werde es zu seiner Zeit eilends ausrichten.\" (Jesaja 60,22)",
+      "buttons": {
+        "primary": "Sehen Sie sich die neueste Predigt an",
+        "secondary": "Besuchen Sie uns diesen Sonntag!"
+      }
+    },
+    "journey": {
+      "title": "Unser Weg des Glaubens ",
+      "text": "Was 1995 als kleiner Gebetskreis begann, ist durch Gottes Gnade zu einer lebendigen Gemeinschaft herangewachsen. Erfahren Sie mehr über unsere Geschichte und wie der Herr aus kleinen Anfängen eine feste geistliche Heimat in Köln geschaffen hat. ",
+      "cta": "Unsere Geschichte lesen",
+      "timeline": {
+        "startYear": "1995",
+        "startTitle": "Die erste Versammlung",
+        "startDescription": "Eine kleine Gruppe traf sich zum Gebet und legte den Grundstein für unsere Gemeinschaft.",
+        "presentYear": "Heute",
+        "presentTitle": "Lebendige Gemeinschaft",
+        "presentDescription": "Ein geistlicher Zufluchtsort im Herzen von Köln."
+      }
+    },
+    "foundation": {
+      "title": "Unser Fundament",
+      "text": "Unser Glaube ist fest in der Heiligen Schrift verankert. Wir stehen zur Wahrheit des Evangeliums und zum Geheimnis des dreieinigen Gottes, um Christus in unserem Alltag zu ehren.",
+      "cta": "Unser Glaubensbekenntnis"
+    },
+    "ministries": {
+      "title": "Unsere Dienste",
+      "list": [
+        {
+          "title": "Jugendarbeit",
+          "text": "Die „auserwählte Generation“ befähigen, ihre Bestimmung und himmlische Identität in Christus zu finden.",
+          "link": "/ministries/youth",
+          "cta": "Mehr zur Jugendarbeit"
+        },
+        {
+          "title": "Kinderdienst",
+          "text": "Gemäß Sprüche 22,6 fördern wir das ganzheitliche geistliche Wachstum unserer Kinder für ein starkes Fundament im Leben.",
+          "link": "/ministries/children",
+          "cta": "Mehr zum Kinderdienst"
+        }
+      ]
+    },
+    "donationSection": {
+      "cta": "Spenden Sie jetzt!",
+      "note": "Geben ist freiwillig und geschieht aus Liebe."
+    },
+    "visitUs": {
+      "title": "Besuchen Sie uns",
+      "address": "Regentenstraße 78-80, 51063 Köln",
+      "cta": "In Google Maps öffnen"
+    }
+  },
+  "about": {
+    "hero": {
+      "text1": "Willkommen in unserer",
+      "text2": "Gemeinschaft des",
+      "coloredText": "Glaubens"
+    },
+    "humbleBeginning": {
+      "title": "Ein bescheidener \n Anfang",
+      "text": "Die geistliche Reise der Gemeinde in Köln begann am 16. April 1995. Unser Anfang war bescheiden; wir versammelten uns zunächst in den Privatwohnungen einiger weniger Gläubigen. Doch trotz der kleinen Anfänge war der Hunger nach Gottes Wort in uns groß. Diese Zeit der Gebete und der Gemeinschaft in den Häusern legte den Grundstein für unser Wachstum. Als Gott uns weitere Türen öffnete, begannen wir, uns in kleineren Sälen zu treffen."
+    },
+    "evolution": {
+      "title": "Die Evolution",
+      "subtitle": "Wandel von einer Migrantengemeinde zu einer beständigen Gemeinschaft",
+      "text": "In den Anfangsjahren unserer Geschichte diente unsere Gemeinde hauptsächlich als geistliche Zufluchtsstätte für Studenten und Migranten (Migrant Church), die zum Studium oder für einen begrenzten Zeitraum nach Deutschland gekommen waren. Viele Mitglieder kehrten nach Abschluss ihres Studiums in ihre Heimat zurück, während die Gemeinde beharrlich weiter das Wort Gottes säte. \n \n Durch Gottes Gnade hat sich diese Situation im Laufe der Zeit gewandelt. Heute hat sich unsere Gemeinde zu einer festen und tief verwurzelten Gemeinschaft entwickelt, deren Mitglieder dauerhaft hier ansässig sind. Nach 21 Jahren treuer Gemeinschaft führte diese Stabilität am 24. November 2016 zur offiziellen Eintragung als Äthiopische Evangelische Gemeinde Köln Mühlheim e.V. beim Amtsgericht Köln unter der Registernummer VR 19124. Dieser Wandel hat der Gemeinde Stabilität verliehen, unsere Dienste erweitert und es uns ermöglicht, ein starkes Fundament für die kommende Generation zu legen.",
+      "registration": {
+        "title": "Offizielle Registrierung",
+        "date": "Nov 24, 2016 • VR 19124",
+        "court": "Amtsgericht Köln"
+      }
+    },
+    "perseverance": {
+      "title": "Beständigkeit in Prüfungen",
+      "text": "Die Geschichte unserer Gemeinde war nicht frei von Herausforderungen. In den vergangenen Jahren war unser Weg von verschiedenen Hindernissen und schwierigen Umständen geprägt. Doch diese Prüfungen dienten uns als Werkzeuge, um in unserem Glauben zu wachsen und Gottes Treue praktisch zu erfahren. Da der Herr uns durch alle Schwierigkeiten hindurch mit seiner Gnade gestärkt hat, steht unsere Gemeinde heute auf einem festen Fundament."
+    },
+    "ministries": {
+      "title": "Unsere heutigen Dienste",
+      "description": "Heute ist die Gemeinde in Köln in verschiedenen Dienstbereichen aktiv, um das geistliche Leben ihrer Mitglieder zu stärken",
+      "list": {
+        "worship": {
+          "title": "Gottesdienst",
+          "text": "Anbetung in Geist und Wahrheit, die die Herzen der Gläubigen näher zum Herrn führt."
+        },
+        "word": {
+          "title": "Verkündigung des Wortes",
+          "text": "Aktuelle und lebensverändernde biblische Lehren."
+        },
+        "bibleStudy": {
+          "title": "Bibelstudium",
+          "text": "Programme, die den Gläubigen helfen, das Wort Gottes zu erforschen und tief in der göttlichen Wahrheit verwurzelt zu sein."
+        }
+      }
+    },
+    "quote": {
+      "text": "Aus dem Kleinsten sollen tausend werden und aus dem Geringsten ein mächtiges Volk. Ich, der Herr, werde es zu seiner Zeit eilends ausrichten.",
+      "source": "Jesaja 60,22"
+    }
+  },
+  "statementOfFaith": {
+    "hero": {
+      "title1": "Glaubensbekenntnis",
+      "title2": "unserer Kirche"
+    },
+    "statemenList": [
+      {
+        "id": "1",
+        "nested": false,
+        "title": "Über die Heilige Schrift",
+        "text": "Wir glauben, dass die Bibel (Altes und Neues Testament), bestehend aus 66 Büchern, das göttlich inspirierte (Divine Inspiration) und unveränderliche Wort Gottes ist. \"Sola Scriptura\" (Allein die Schrift) ist die einzige und höchste Autorität für unseren Glauben, unser Leben und unsere Kirchenordnung. (2. Tim. 3,16-17)"
+      },
+      {
+        "id": "2",
+        "nested": false,
+        "title": "Über die Dreifaltigkeit (Trinität)",
+        "text": "Wir glauben an den einen Gott, der ewig, unendlich und der Schöpfer aller Dinge ist. Dieser Gott offenbart sich in drei Personen (Vater, Sohn und Heiliger Geist), die wesensgleich, existentiell und in ihrer Autorität gleichgestellt sind (Co-equal und Co-eternal). Gott ist dreieinig (Triune); die drei Personen existieren in Einheit (Coinherence) ohne Vermischung oder Trennung. Wir glauben, dass dieses göttliche Geheimnis der Weg ist, wie Gott sich den Gläubigen offenbart. (Matt. 28,19-20)"
+      },
+      {
+        "id": "3",
+        "nested": false,
+        "title": "Über den Herrn Jesus Christus",
+        "text": "Wir glauben, dass der Herr Jesus Christus der wesenseigene Sohn Gottes ist, wahrer Gott und wahrer Mensch. Er wurde durch den Heiligen Geist von der Jungfrau Maria geboren, starb für unsere Sünden am Kreuz, wurde begraben, stieg hinab in das Totenreich (Hades) und besiegte die Macht des Todes. Am dritten Tag stand Er leibhaftig von den Toten auf, fuhr auf in den Himmel, sitzt zur Rechten des Vaters, tritt heute für uns ein und wird in großer Herrlichkeit wiederkommen. (Kol. 1,19-20)"
+      },
+      {
+        "id": "4",
+        "nested": false,
+        "title": "Über den Heiligen Geist",
+        "text": "Wie der Herr Jesus Christus vom Vater ausgegangen ist (Joh. 8,42), so geht auch der Heilige Geist vom Vater aus (Joh. 15,26) und ist die dritte Person der Dreifaltigkeit. Wir glauben, dass der Heilige Geist Gott ist, dem zusammen mit dem Vater und dem Sohn Anbetung und Ehre gebührt. Er ist ein persönlicher Geist, der die Gläubigen heiligt, führt, tröstet und die Welt der Sünde überführt. (Joh. 15,26, 16,12-14)"
+      },
+      {
+        "id": "5",
+        "nested": false,
+        "title": "Über den Sündenfall und die Sündhaftigkeit des Menschen",
+        "text": "Wir glauben, dass der Mensch, obwohl im Bilde Gottes geschaffen, durch Übertretung fiel und dadurch die Sünde in die gesamte Menschheit eintrat. Daher ist jeder Mensch von Natur aus ein Sünder, getrennt von der Herrlichkeit Gottes, und kann diesem Urteil aus eigener Kraft nicht entkommen. Errettung geschieht allein aus Gnade (Sola Gratia) durch den Glauben an Christus Jesus. (Eph. 2,8, Joh. 1,12-13)"
+      },
+      {
+        "id": "6",
+        "nested": true,
+        "title": "Die Erfüllung mit dem Heiligen Geist und Seine Gaben",
+        "text": "Wir glauben, dass ein Mensch, der an Jesus Christus glaubt, mit dem Heiligen Geist versiegelt und erfüllt wird (Eph. 1,13, Apg. 2,4). Wir glauben an ein zweifaches Wirken der Erfüllung",
+        "list": [
+          {
+            "label": "Innere Erfüllung",
+            "detail": "Für das geistliche Wachstum und die Heiligung (Sanctification)."
+          },
+          {
+            "label": "Äußere Erfüllung",
+            "detail": "Das Anziehen geistlicher Kraft für den Dienst und das Zeugnis. Wir glauben, dass die verschiedenen Gnadengaben zur Erbauung der Gemeinde auch heute noch wirken. (1. Kor. 12,7-11)"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "nested": false,
+        "title": "Über die Kirche",
+        "text": "Die Kirche ist die Gemeinschaft der durch das Blut Christi Erlösten; ihr Fundament ist Christus selbst (Matt. 16,18). Sie ist der Leib Christi und die Wohnung des Heiligen Geistes. Wir glauben an die geistliche Einheit aller Gläubigen, die in der örtlichen Gemeinde praktisch zum Ausdruck kommen muss. (Eph. 4,4)"
+      },
+      {
+        "id": "8",
+        "nested": true,
+        "title": "Die kirchlichen Ordnungen (Sakramente/Satzungen)",
+        "text": "",
+        "list": [
+          {
+            "label": "Die Wassertaufe",
+            "detail": "Ein Auftrag Christi an die Kirche, vollzogen auf den Namen des Vaters, des Sohnes und des Heiligen Geistes. (Matt. 28,19-20)"
+          },
+          {
+            "label": "Das Abendmahl",
+            "detail": "Ein von Christus eingesetztes Gedächtnismahl Seines Todes und Seiner Auferstehung. (1. Kor. 11,23-34)"
+          },
+          {
+            "label": "Die Heilige Ehe",
+            "detail": "Die christliche Ehe ist eine von Gott gestiftete Institution zwischen einem Mann und einer Frau. Was Gott zusammengefügt hat, darf der Mensch nicht scheiden. (Mark. 10,6-9)"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "nested": false,
+        "title": "Über die Endzeit",
+        "text": "Wir glauben an die leibliche Auferstehung und die Entrückung der Gläubigen. Danach folgt das Preisgericht Christi (Bema Seat), wo Gläubige Lohn für ihre Werke empfangen. Wir glauben an die Wiederkunft Christi zur Errichtung des tausendjährigen Reiches (Millennial Kingdom), die allgemeine Toteauferstehung, das Jüngste Gericht vor dem Großen Weißen Thron und die endgültige Trennung zwischen Gerechten (ewiges Leben) und Sündern (ewige Strafe). (Matt. 24)"
+      }
+    ]
+  },
+  "youthMinistry": {
+    "hero": {
+      "text1": "… damit ihr die Wohltaten dessen verkündigt, der euch aus der Finsternis ",
+      "text2": "zu seinem wunderbaren Licht berufen hat; ihr seid ein auserwähltes Geschlecht.",
+      "source": "1. Petrus 2,9"
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "text": "Unsere Vision ist es, die Jugendlichen unserer Gemeinde als gottesfürchtige und dienende Menschen zu sehen, die im Dienst und im Lebenszeugnis fruchtbar sind."
+    },
+    "mission": {
+      "title": "Unser Ziel (unsere Mission)",
+      "text": "Um diese Vision zu erreichen, konzentrieren wir uns auf die folgenden vier hauptsächlichen Schwerpunkte:",
+      "identity": {
+        "title": "Christliche Identität",
+        "text": "Den Jugendlichen helfen, die himmlische Bürgerschaft und Würde zu verstehen, die sie in Christus Jesus als „auserwähltes Geschlecht“ haben, und sie darin zu stärken, im Glauben festzustehen."
+      },
+      "shaped": {
+        "title": "Prägung durch das Wort Gottes",
+        "text": "Da es notwendig ist, zuerst das Wort zu kennen, um die Wohltaten Gottes zu verkünden, sollen die Jugendlichen durch den Unterricht der Heiligen Schrift geformt werden."
+      },
+      "saints": {
+        "title": "Gemeinschaft der Heiligen",
+        "text": "Eine Familie sein, in der Jugendliche, die aus der Finsternis ins Licht gekommen sind, einander unterstützen, in Freiheit wachsen und echte christliche Liebe einüben."
+      },
+      "goodness": {
+        "title": "Gelebte Güte Gottes",
+        "text": "Die Jugendlichen befähigen, in ihrer Schule, an ihrem Arbeitsplatz und unter ihren Freunden die Liebe und Güte Gottes in Tat und Wort zu zeigen sowie sich im Haus Gottes in angemessener christlicher Ordnung zu bewegen."
+      }
+    }
+  },
+  "childrenMinistry": {
+    "hero": {
+      "text1": "Trainiere einen Knaben gemäß dem Weg, den er gehen soll; ",
+      "text2": "selbst wenn er alt wird, wird er nicht davon weichen.",
+      "source": "Sprüche 22:6"
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "text1": "Kindern zu helfen, eine persönliche Beziehung zu Herrn Jesus Christus aufzubauen und geistlich zu wachsen, indem sie das Wort Gottes von klein auf kennenlernen.",
+      "text2": "„Und Jesus nahm zu an Weisheit und Alter und Gnade bei Gott und den Menschen“ (Lukas 2,52). Unser Dienst geht über die bloße Betreuung hinaus; wir fördern durch Lehre ein ganzheitliches Wachstum nach dem Vorbild Christi."
+    },
+    "coreValues": {
+      "title": "Unsere Kernwerte",
+      "foundation": {
+        "title": "Biblische Grundlage",
+        "text": "Alle unsere Lektionen sind bibelzentriert und so gestaltet, dass sie für Kinder leicht verständlich sind."
+      },
+      "development": {
+        "title": "Ganzheitliche Entwicklung",
+        "text": "Wir ermutigen Kinder, geistlich, intellektuell und sozial zu reifen."
+      },
+      "connection": {
+        "title": "Sprachliche und kulturelle Verbindung",
+        "text": "Wir unterstützen Kinder in der Diaspora dabei, sich an den Lebensstil in Deutschland anzupassen, ohne ihre eigene Kultur und Sprache zu vergessen."
+      }
+    },
+    "safety": {
+      "title": "Sicherheits- und Schutzrichtlinien",
+      "label": "Damit Eltern ihre Kinder mit vollem Vertrauen zu uns bringen können, garantieren wir folgende Sicherheitsaspekte",
+      "safetyStandards": {
+        "teachers": {
+          "title": "Kompetenz der Lehrer",
+          "text": "Unsere Mitarbeiter sind sorgfältig ausgewählt, im Gebet und Wort gefestigt und nehmen regelmäßig an Schulungen zur Kinderbetreuung teil."
+        },
+        "environment": {
+          "title": "Saubere und altersgerechte Räumlichkeiten",
+          "text": "Unsere Unterrichtsräume sind sauber, kinderfreundlich und sicher vor Gefahrenquellen gestaltet."
+        },
+        "supervision": {
+          "title": "Aufsichtssystem",
+          "text": "Der Kinderdienst wird mit hoher Verantwortung geführt. Um sicherzustellen, dass sich die Kinder nicht verletzen oder äußeren Einflüssen ausgesetzt sind, werden sie zu keiner Zeit unbeaufsichtigt gelassen."
+        },
+        "communication": {
+          "title": "Elternkommunikation",
+          "text": "Eltern werden nach einem festen Plan in den Dienst miteinbezogen und haben jederzeit das Recht, den Unterricht zu besuchen oder Informationen zu erfragen."
+        }
+      }
+    },
+    "fellowship": {
+      "title": "Gemeinschaft der Kinder",
+      "text": "Wir bieten verschiedene Aktivitäten an, damit die Kinder mit Freude in die Kirche kommen. Durch gemeinsames Singen, Beten und Essen legen wir den Grundstein für ihre zukünftige Geschwisterlichkeit."
+    },
+    "service": {
+      "title": "Kontinuierliche Begleitung ",
+      "text": "Unser Dienst begleitet die Kinder von ihrem ersten Kirchenbesuch bis hin zur Wassertaufe. Nach der Taufe wechseln sie in den Jugenddienst über."
+    },
+    "questions": {
+      "title": "Beantwortung von Kinderfragen",
+      "text": "In Zusammenarbeit mit den Eltern bemühen wir uns, sowohl geistliche als auch persönliche Fragen der Kinder zu beantworten, um ihnen Orientierung für ihren weiteren Lebensweg zu geben."
+    }
+  },
+  "impressum": {
+    "title": "Impressum",
+    "organization": {
+      "title": "Angaben gemäß § 5 DDG",
+      "name": "Äthiopische Evangelische Gemeinde Köln Mühlheim e.V."
+    },
+    "representedBy": {
+      "title": "Vertreten durch",
+      "name": "Haileselassie G. Gebrehiwot"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "phone": "Telefon",
+      "email": "E-Mail"
+    },
+    "register": {
+      "title": "Registereintrag",
+      "list": [
+        "Eintragung im Vereinsregister",
+        "Registergericht: Amtsgericht Köln",
+        "Registernummer: VR 19124"
+      ]
+    }
+  },
+  "ministries": {
+    "hero": {
+      "label": "Unser Dienst",
+      "title": {
+        "text1": "Jede ",
+        "text2": "Generation ausrüsten"
+      },
+      "description": "Entdecken Sie, wie wir unserer Gemeinschaft durch engagierte Dienste dienen, die auf geistliches Wachstum, ein biblisches Fundament und echte christliche Gemeinschaft ausgerichtet sind."
+    },
+    "youthMinistry": {
+      "title": "Jugendarbeit",
+      "description": "Unsere Vision ist es, die Jugend unserer Gemeinde als gottesfürchtige und dienende Menschen zu sehen, die in ihrem Dienst und in ihrem Zeugnis im Alltag Frucht bringen. Wir konzentrieren uns darauf, Identitäten in Christus durch das Wort Gottes und echte christliche Liebe zu formen.",
+      "cta": "Jugendarbeit entdecken"
+    },
+    "childrenMinistry": {
+      "title": "Kinderdienst",
+      "description": "Basierend auf Sprüche 22,6 helfen wir Kindern, eine persönliche Beziehung zum Herrn Jesus Christus aufzubauen. Wir bieten ein sicheres, ganzheitliches Umfeld, in dem die nächste Generation an Weisheit, Alter und Gnade bei Gott wächst.",
+      "cta": "Kinderdienst entdecken"
+    },
+    "transitionQuote": "Wir bauen eine Brücke zwischen den Generationen, verankert im ewigen Wort Gottes."
+  },
+  "gallery": {
+    "heroTitle": "Äthiopische Evangelische Gemeinde Köln Mülheim Fotogalerie",
+    "heroSubtitle": "Momente des Gottesdienstes, der Gemeinschaft, des Dienstes und der Feier, geteilt von unserer Kirchengemeinde.",
+    "noSelectedImage": "Für dieses Jahr sind noch keine Bilder verfügbar.",
+    "noImagesTitle": "Im Moment ist kein Bild verfügbar.",
+    "noImagesSubtitle": "Wir haben der Galerie noch keine Fotos hinzugefügt. Schauen Sie später noch einmal vorbei!"
+  },
+  "navbar": {
+    "logo": "Äthiopische Evangelische Gemeinde Köln Mülheim",
+    "links": {
+      "home": "Startseite",
+      "about": "Über uns",
+      "statementOfFaith": "Glaubensbekenntnis",
+      "ministries": "Dienste",
+      "legalNotice": "Impressum",
+      "donate": "Spenden",
+      "gallery": "Galerie"
+    }
+  },
+  "footer": {
+    "contact": {
+      "title": "Kontakt",
+      "address": "Anschrift",
+      "representative": "Vertreten durch",
+      "phone": "Telefon",
+      "email": "E-Mail"
+    },
+    "quickLinks": {
+      "title": "Schnellzugriffe",
+      "legalNotice": "Impressum",
+      "aboutUs": "Über uns"
+    },
+    "legal": {
+      "title": "Rechtliche Details",
+      "registerNo": "Registernummer"
+    }
+  },
+  "donate": {
+    "intro": {
+      "title": "Unterstützen Sie unsere Mission",
+      "subtitle": "Ihre Großzügigkeit hilft uns, den Glauben zu verbreiten, unserer Gemeinschaft zu dienen und Bedürftige zu unterstützen."
+    },
+    "form": {
+      "title": "Wählen Sie Ihren Spendenbetrag",
+      "customPlaceholder": "Individueller Betrag",
+      "paypalButton": "Mit PayPal spenden",
+      "secureNote": "Sichere Spende über PayPal"
+    },
+    "impact": {
+      "title": "Was Ihre Spende unterstützt",
+      "items": [
+        {
+          "title": "Gemeindehilfe",
+          "description": "Mitgefühl zeigen durch Hilfsprojekte, lokale Unterstützungsinitiativen und Fürsorge für Bedürftige."
+        },
+        {
+          "title": "Jugenddienst",
+          "description": "Junge Menschen im Glauben, in der Gemeinschaft und in der Führung begleiten, damit sie geistlich und persönlich wachsen."
+        },
+        {
+          "title": "Kirchenprogramme",
+          "description": "Gottesdienste, Bibelkreise und Aktivitäten anbieten, die unsere Kirchengemeinde stärken."
+        },
+        {
+          "title": "Missionen & Evangelisation",
+          "description": "Das Evangelium lokal und weltweit verkünden, Missionare unterstützen und Hoffnung in Christus verbreiten."
+        }
+      ]
+    },
+    "trust": {
+      "message": "Spenden sind freiwillig und werden mit Liebe gegeben. Jeder Beitrag wird verantwortungsvoll verwendet, um die Mission unserer Kirche zu unterstützen."
+    },
+    "closing": {
+      "quote": "„Jeder gebe, wie er es sich im Herzen vorgenommen hat, nicht widerwillig oder unter Zwang.“",
+      "reference": "— 2. Korinther 9:7"
+    }
+  },
+  "verify": {
+    "loading": {
+      "title": "Ihre Spende wird überprüft",
+      "subtitle": "Bitte warten Sie, dies kann einige Sekunden dauern."
+    },
+    "success": {
+      "title": "Vielen Dank für Ihre Spende ❤️",
+      "subtitle": "Ihre Zahlung wurde erfolgreich abgeschlossen.",
+      "button": "Zurück zur Startseite"
+    },
+    "error": {
+      "title": "Zahlungsstatus",
+      "invalidSession": "Ungültige Zahlungssitzung. Es wurde keine Transaktion gefunden.",
+      "notCompleted": "Die Zahlung steht noch aus oder wurde nicht abgeschlossen.",
+      "failedVerification": "Bei der Überprüfung Ihrer Spende ist ein technisches Problem aufgetreten.",
+      "expired": "Diese Zahlungssitzung ist abgelaufen. Wenn Sie bereits bezahlt haben, keine Sorge – Ihre Spende wurde bearbeitet.",
+      "buttonTryAgain": "Erneut versuchen",
+      "buttonGoHome": "Zur Startseite",
+      "buttonGoDonate": "Zurück zum Spenden"
+    }
+  },
+  "cancel": {
+    "title": "Spende abgebrochen",
+    "subtitle": "Ihre Zahlung wurde abgebrochen. Es wurde kein Geld abgebucht.",
+    "buttons": {
+      "donateAgain": "Erneut spenden",
+      "home": "Startseite"
+    }
+  },
+  "error": {
+    "title": "Etwas ist schiefgelaufen.",
+    "description": "Dieser Inhalt konnte momentan nicht geladen werden. Bitte überprüfen Sie Ihre Internetverbindung oder versuchen Sie es später erneut.",
+    "cta": "Versuchen Sie es erneut"
+  },
+  "noContent": {
+    "title": "Inhalt nicht verfügbar",
+    "subtitle": "Die Seite, die Sie versuchen anzuzeigen, hat keinen Inhalt. Sie wurde möglicherweise gelöscht oder verschoben.",
+    "button": "Zurück zur Startseite"
+  }
+}
