@@ -215,15 +215,20 @@ const GalleryPage = () => {
                         />
 
                         {/* Image */}
-                        <div className="relative z-10 max-h-[85vh] max-w-[90vw]">
+                        <div className="relative z-10 max-h-[85vh] max-w-[90vw] flex flex-col items-center">
                             <Image
                                 src={activeImage?.url}
-                                alt={`Gallery image ${activeImage?.id}`}
-                                width={1200}
-                                height={800}
-                                className="rounded-xl shadow-2xl max-h-[85vh] w-auto object-contain"
+                                alt={activeImage?.caption || `Gallery image ${activeImage?.id}`}
+                                width={activeImage?.width || 1200}
+                                height={activeImage?.height || 800}
+                                className="rounded-xl shadow-2xl max-h-[80vh] w-auto object-contain"
                                 priority
                             />
+                            {activeImage?.caption && (
+                                <p className="mt-3 max-w-2xl text-center text-sm sm:text-base text-white/90 px-4">
+                                    {activeImage.caption}
+                                </p>
+                            )}
                         </div>
                     </div>
                 )

@@ -27,16 +27,22 @@ const IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif', '.av
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(ROOT, 'data');
 const EVENTS_FILE = path.join(DATA_DIR, 'events.json');
 const EVENT_IMAGES_DIR = path.join(DATA_DIR, 'event-images');
+const GALLERY_UPLOADS_DIR = path.join(DATA_DIR, 'gallery-uploads');
+const GALLERY_META_FILE = path.join(DATA_DIR, 'gallery-meta.json');
 const ADMIN_COOKIE = 'admin_session';
 const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 const MAX_IMAGES_PER_EVENT = 5;
+const MAX_GALLERY_UPLOAD_BATCH = 20;
 const MAX_IMAGE_SIZE_BYTES = 5 * 1024 * 1024;
+const MAX_CAPTION_LENGTH = 500;
 const ALLOWED_IMAGE_MIME = new Set(['image/jpeg', 'image/png', 'image/webp']);
 const MIME_EXT = { 'image/jpeg': '.jpg', 'image/png': '.png', 'image/webp': '.webp' };
 
 await mkdir(DATA_DIR, { recursive: true });
 await mkdir(EVENT_IMAGES_DIR, { recursive: true });
+await mkdir(GALLERY_UPLOADS_DIR, { recursive: true });
 if (!existsSync(EVENTS_FILE)) await writeFile(EVENTS_FILE, '[]', 'utf8');
+if (!existsSync(GALLERY_META_FILE)) await writeFile(GALLERY_META_FILE, '{}', 'utf8');
 
 app.disable('x-powered-by');
 app.set('trust proxy', 1);
@@ -45,47 +51,64 @@ app.use(cookieParser());
 
 // --- API routes -------------------------------------------------------------
 
+async function loadGalleryMeta() {
+  try {
+    const raw = await readFile(GALLERY_META_FILE, 'utf8');
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch { return {}; }
+}
+
+async function saveGalleryMeta(meta) {
+  const tmp = `${GALLERY_META_FILE}.tmp`;
+  await writeFile(tmp, JSON.stringify(meta, null, 2), 'utf8');
+  await rename(tmp, GALLERY_META_FILE);
+}
+
+async function collectGalleryImages(baseDir, urlPrefix, source) {
+  const out = [];
+  let yearEntries;
+  try {
+    yearEntries = await readdir(baseDir, { withFileTypes: true });
+  } catch (err) {
+    if (err.code === 'ENOENT') return out;
+    throw err;
+  }
+  for (const yearEntry of yearEntries) {
+    if (!yearEntry.isDirectory()) continue;
+    const year = yearEntry.name;
+    const yearPath = path.join(baseDir, year);
+    const files = await readdir(yearPath);
+    for (const file of files) {
+      const ext = path.extname(file).toLowerCase();
+      if (!IMAGE_EXTENSIONS.has(ext)) continue;
+      const filePath = path.join(yearPath, file);
+      let width; let height;
+      try {
+        const buf = await readFile(filePath);
+        ({ width, height } = imageSize(buf));
+      } catch (err) {
+        console.warn(`Could not read dimensions for ${filePath}:`, err.message);
+      }
+      out.push({
+        id: `${year}/${file}`,
+        url: `${urlPrefix}/${encodeURIComponent(year)}/${encodeURIComponent(file)}`,
+        year, width, height, source,
+      });
+    }
+  }
+  return out;
+}
+
 app.get('/api/gallery', async (_req, res) => {
   try {
-    let yearEntries;
-    try {
-      yearEntries = await readdir(GALLERY_DIR, { withFileTypes: true });
-    } catch (err) {
-      if (err.code === 'ENOENT') return res.json([]);
-      throw err;
-    }
-
-    const images = [];
-    for (const yearEntry of yearEntries) {
-      if (!yearEntry.isDirectory()) continue;
-      const year = yearEntry.name;
-      const yearPath = path.join(GALLERY_DIR, year);
-      const files = await readdir(yearPath);
-
-      for (const file of files) {
-        const ext = path.extname(file).toLowerCase();
-        if (!IMAGE_EXTENSIONS.has(ext)) continue;
-
-        const filePath = path.join(yearPath, file);
-        let width;
-        let height;
-        try {
-          const buf = await readFile(filePath);
-          ({ width, height } = imageSize(buf));
-        } catch (err) {
-          console.warn(`Could not read dimensions for ${filePath}:`, err.message);
-        }
-
-        images.push({
-          id: `${year}/${file}`,
-          url: `/gallery/${encodeURIComponent(year)}/${encodeURIComponent(file)}`,
-          year,
-          width,
-          height,
-        });
-      }
-    }
-
+    const meta = await loadGalleryMeta();
+    const committed = await collectGalleryImages(GALLERY_DIR, '/gallery', 'committed');
+    const uploaded = await collectGalleryImages(GALLERY_UPLOADS_DIR, '/gallery-uploads', 'uploaded');
+    const images = [...committed, ...uploaded].map((img) => ({
+      ...img,
+      caption: meta[img.id]?.caption || '',
+    }));
     res.json(images);
   } catch (err) {
     console.error('Gallery API error:', err);
@@ -456,6 +479,113 @@ app.delete('/api/admin/events/:id', requireAdmin, async (req, res) => {
   res.json({ ok: true });
 });
 
+// --- Gallery admin ---------------------------------------------------------
+
+const galleryUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: MAX_IMAGE_SIZE_BYTES, files: MAX_GALLERY_UPLOAD_BATCH },
+  fileFilter: (_req, file, cb) => {
+    if (!ALLOWED_IMAGE_MIME.has(file.mimetype)) {
+      return cb(new Error('Only JPEG, PNG, and WEBP images are allowed.'));
+    }
+    cb(null, true);
+  },
+});
+
+function sanitizeYear(value) {
+  const s = String(value || '').trim();
+  if (!/^[0-9]{4}$/.test(s)) return '';
+  return s;
+}
+
+function sanitizeFilename(value) {
+  const s = String(value || '');
+  if (!s || s.includes('/') || s.includes('\\') || s.includes('..')) return '';
+  return s;
+}
+
+app.get('/api/admin/gallery', requireAdmin, async (_req, res) => {
+  try {
+    const meta = await loadGalleryMeta();
+    const committed = await collectGalleryImages(GALLERY_DIR, '/gallery', 'committed');
+    const uploaded = await collectGalleryImages(GALLERY_UPLOADS_DIR, '/gallery-uploads', 'uploaded');
+    const images = [...committed, ...uploaded].map((img) => ({
+      ...img,
+      caption: meta[img.id]?.caption || '',
+      uploadedAt: meta[img.id]?.uploadedAt || null,
+    }));
+    res.json(images);
+  } catch (err) {
+    console.error('Admin gallery list error:', err);
+    res.status(500).json({ error: 'Failed to list gallery images.' });
+  }
+});
+
+app.post('/api/admin/gallery', requireAdmin, galleryUpload.array('images', MAX_GALLERY_UPLOAD_BATCH), async (req, res) => {
+  const year = sanitizeYear(req.body.year);
+  if (!year) return res.status(400).json({ error: 'A 4-digit year is required.' });
+  const files = req.files || [];
+  if (files.length === 0) return res.status(400).json({ error: 'Select at least one image to upload.' });
+  const caption = String(req.body.caption || '').trim().slice(0, MAX_CAPTION_LENGTH);
+
+  const yearDir = path.join(GALLERY_UPLOADS_DIR, year);
+  await mkdir(yearDir, { recursive: true });
+  const meta = await loadGalleryMeta();
+  const now = new Date().toISOString();
+  const saved = [];
+  for (const file of files) {
+    const ext = MIME_EXT[file.mimetype] || '.bin';
+    const filename = `${randomUUID()}${ext}`;
+    await writeFile(path.join(yearDir, filename), file.buffer);
+    const id = `${year}/${filename}`;
+    meta[id] = { caption, uploadedAt: now };
+    saved.push({ id, year, filename, caption, uploadedAt: now });
+  }
+  await saveGalleryMeta(meta);
+  res.status(201).json({ uploaded: saved });
+});
+
+app.patch('/api/admin/gallery', requireAdmin, async (req, res) => {
+  const year = sanitizeYear(req.body?.year);
+  const filename = sanitizeFilename(req.body?.filename);
+  if (!year || !filename) return res.status(400).json({ error: 'year and filename are required.' });
+  const id = `${year}/${filename}`;
+  const caption = String(req.body?.caption || '').trim().slice(0, MAX_CAPTION_LENGTH);
+
+  const committedPath = path.join(GALLERY_DIR, year, filename);
+  const uploadedPath = path.join(GALLERY_UPLOADS_DIR, year, filename);
+  if (!existsSync(committedPath) && !existsSync(uploadedPath)) {
+    return res.status(404).json({ error: 'Image not found.' });
+  }
+  const meta = await loadGalleryMeta();
+  if (caption) {
+    meta[id] = { ...(meta[id] || {}), caption, updatedAt: new Date().toISOString() };
+  } else if (meta[id]) {
+    delete meta[id].caption;
+    if (Object.keys(meta[id]).length === 0) delete meta[id];
+  }
+  await saveGalleryMeta(meta);
+  res.json({ ok: true, id, caption });
+});
+
+app.delete('/api/admin/gallery', requireAdmin, async (req, res) => {
+  const year = sanitizeYear(req.body?.year);
+  const filename = sanitizeFilename(req.body?.filename);
+  if (!year || !filename) return res.status(400).json({ error: 'year and filename are required.' });
+  const id = `${year}/${filename}`;
+  const uploadedPath = path.join(GALLERY_UPLOADS_DIR, year, filename);
+  if (!existsSync(uploadedPath)) {
+    return res.status(400).json({ error: 'Only uploaded gallery images can be deleted from the admin panel.' });
+  }
+  try { await unlink(uploadedPath); } catch (err) {
+    console.error('Gallery delete error:', err);
+    return res.status(500).json({ error: 'Failed to delete image.' });
+  }
+  const meta = await loadGalleryMeta();
+  if (meta[id]) { delete meta[id]; await saveGalleryMeta(meta); }
+  res.json({ ok: true });
+});
+
 app.use((err, _req, res, next) => {
   if (err && (err.code === 'LIMIT_FILE_SIZE' || err.code === 'LIMIT_FILE_COUNT' || err.message?.includes('images are allowed'))) {
     return res.status(400).json({ error: err.message });
@@ -466,6 +596,7 @@ app.use((err, _req, res, next) => {
 // --- Static site -----------------------------------------------------------
 
 app.use('/event-images', express.static(EVENT_IMAGES_DIR, { maxAge: '7d', immutable: true }));
+app.use('/gallery-uploads', express.static(GALLERY_UPLOADS_DIR, { maxAge: '7d', immutable: true }));
 app.use(express.static(OUT_DIR, { extensions: ['html'] }));
 
 app.use((_req, res) => {

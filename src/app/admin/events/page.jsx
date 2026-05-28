@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { LogOut, Plus, Loader2 } from "lucide-react";
+import { Plus, Loader2 } from "lucide-react";
+import AdminNav from "@/components/admin/AdminNav";
 import EventForm from "@/components/admin/EventForm";
 import EventRow from "@/components/admin/EventRow";
 
@@ -27,11 +28,6 @@ export default function AdminEventsPage() {
   }
 
   useEffect(() => { load(); }, []);
-
-  async function logout() {
-    await fetch("/api/admin/logout", { method: "POST", credentials: "same-origin" });
-    router.push("/admin/login");
-  }
 
   async function submitEvent(formData, eventId) {
     setSaving(true);
@@ -70,24 +66,17 @@ export default function AdminEventsPage() {
   return (
     <main className="min-h-screen bg-[#FCFAF7] pt-24 pb-16 px-4">
       <div className="max-w-5xl mx-auto">
+        <AdminNav />
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-heading">Manage Events</h1>
-          <div className="flex gap-2">
-            {!formOpen && (
-              <button
-                onClick={() => setCreating(true)}
-                className="inline-flex items-center gap-2 rounded-md bg-yellow-500 hover:bg-yellow-400 px-4 py-2 font-heading text-black"
-              >
-                <Plus size={16} /> New event
-              </button>
-            )}
+          {!formOpen && (
             <button
-              onClick={logout}
-              className="inline-flex items-center gap-2 rounded-md bg-stone-200 hover:bg-stone-300 px-4 py-2 text-stone-800"
+              onClick={() => setCreating(true)}
+              className="inline-flex items-center gap-2 rounded-md bg-yellow-500 hover:bg-yellow-400 px-4 py-2 font-heading text-black"
             >
-              <LogOut size={16} /> Logout
+              <Plus size={16} /> New event
             </button>
-          </div>
+          )}
         </div>
 
         {error && <div className="mb-4 rounded-md bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">{error}</div>}
