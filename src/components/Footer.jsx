@@ -22,16 +22,6 @@ const Footer = () => {
               +49 15566 758443
             </a>
           </p>
-          <p className="mt-2">
-            {messages.contact.email}:{" "}
-            <a href="mailto:info@aeg-koeln.de" className="hover:underline">
-              info@aeg-koeln.de
-            </a>
-            {" / "}
-            <a href="mailto:kontakt@aeg-koeln.de" className="hover:underline">
-              kontakt@aeg-koeln.de
-            </a>
-          </p>
         </div>
 
         {/* Column 2: Quick Links */}
@@ -39,10 +29,13 @@ const Footer = () => {
           <h4 className="font-semibold mb-3">{messages.quickLinks.title}</h4>
           <ul className="space-y-2">
             <li>
-              <Link href="/impressum">{messages.quickLinks.legalNotice}</Link>
+              <Link href="/contact">{messages.quickLinks.contact}</Link>
             </li>
             <li>
               <Link href="/about">{messages.quickLinks.aboutUs}</Link>
+            </li>
+            <li>
+              <Link href="/impressum">{messages.quickLinks.legalNotice}</Link>
             </li>
           </ul>
         </div>

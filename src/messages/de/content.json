@@ -340,7 +340,8 @@
       "ministries": "Dienste",
       "legalNotice": "Impressum",
       "donate": "Spenden",
-      "gallery": "Galerie"
+      "gallery": "Galerie",
+      "contact": "Kontakt"
     }
   },
   "footer": {
@@ -354,7 +355,8 @@
     "quickLinks": {
       "title": "Schnellzugriffe",
       "legalNotice": "Impressum",
-      "aboutUs": "Über uns"
+      "aboutUs": "Über uns",
+      "contact": "Kontakt"
     },
     "legal": {
       "title": "Rechtliche Details",
@@ -439,5 +441,29 @@
     "title": "Inhalt nicht verfügbar",
     "subtitle": "Die Seite, die Sie versuchen anzuzeigen, hat keinen Inhalt. Sie wurde möglicherweise gelöscht oder verschoben.",
     "button": "Zurück zur Startseite"
+  },
+  "contact": {
+    "hero": {
+      "title": "Kontakt",
+      "subtitle": "Wir freuen uns, von Ihnen zu hören. Senden Sie uns eine Nachricht und wir antworten so schnell wie möglich."
+    },
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet..."
+    },
+    "info": {
+      "address": "Regentenstraße 78-80, 51063 Köln",
+      "phone": "+49 15566 758443"
+    },
+    "status": {
+      "success": "Vielen Dank! Ihre Nachricht wurde gesendet.",
+      "error": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+      "missing": "Bitte füllen Sie alle Felder aus.",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+    }
   }
 }

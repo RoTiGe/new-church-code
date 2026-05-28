@@ -340,7 +340,8 @@
       "ministries": "Ministries",
       "legalNotice": "Legal Notice",
       "donate": "Donate",
-      "gallery": "Gallery"
+      "gallery": "Gallery",
+      "contact": "Contact"
     }
   },
   "footer": {
@@ -354,7 +355,8 @@
     "quickLinks": {
       "title": "Quick Links",
       "legalNotice": "Legal Notice",
-      "aboutUs": "About Us"
+      "aboutUs": "About Us",
+      "contact": "Contact Us"
     },
     "legal": {
       "title": "Legal Details",
@@ -439,5 +441,29 @@
     "title": "Content Not Available",
     "subtitle": "The page you’re trying to view doesn’t have any content. It may have been deleted or moved.",
     "button": "Back to Home"
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "We’d love to hear from you. Send us a message and we’ll reply as soon as we can."
+    },
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "submitting": "Sending..."
+    },
+    "info": {
+      "address": "Regentenstraße 78-80, 51063 Köln",
+      "phone": "+49 15566 758443"
+    },
+    "status": {
+      "success": "Thank you! Your message has been sent.",
+      "error": "Sorry, something went wrong. Please try again later.",
+      "missing": "Please fill in all fields.",
+      "invalidEmail": "Please enter a valid email address."
+    }
   }
 }

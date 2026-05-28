@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { readdir, readFile } from 'node:fs/promises';
 import { imageSize } from 'image-size';
 import axios from 'axios';
+import nodemailer from 'nodemailer';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -127,6 +128,73 @@ app.post('/api/create-order', async (req, res) => {
     const errorData = err.response?.data || { error: err.message };
     console.error(`PayPal create-order error (${statusCode}):`, errorData);
     res.status(statusCode).json(errorData);
+  }
+});
+
+// --- Contact form ----------------------------------------------------------
+
+let mailTransporter = null;
+function getMailTransporter() {
+  if (mailTransporter) return mailTransporter;
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE } = process.env;
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) return null;
+  const port = parseInt(SMTP_PORT || '587', 10);
+  mailTransporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port,
+    secure: SMTP_SECURE ? SMTP_SECURE === 'true' : port === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  });
+  return mailTransporter;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[c]));
+}
+
+app.post('/api/contact', async (req, res) => {
+  const { name, email, subject, message, website } = req.body || {};
+
+  // Honeypot: bots fill hidden "website" field; real users won't.
+  if (website) return res.status(200).json({ ok: true });
+
+  if (!name || !email || !subject || !message) {
+    return res.status(400).json({ error: 'Missing required fields.' });
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'Invalid email address.' });
+  }
+  if (name.length > 200 || subject.length > 200 || email.length > 200 || message.length > 5000) {
+    return res.status(400).json({ error: 'Field too long.' });
+  }
+
+  const { CONTACT_TO, CONTACT_FROM, SMTP_USER } = process.env;
+  const to = CONTACT_TO || 'info@aeg-koeln.de,kontakt@aeg-koeln.de';
+  const from = CONTACT_FROM || SMTP_USER;
+
+  const transporter = getMailTransporter();
+  if (!transporter || !from) {
+    return res.status(500).json({ error: 'Mail service is not configured.' });
+  }
+
+  try {
+    await transporter.sendMail({
+      from: `"EEC Cologne Website" <${from}>`,
+      to,
+      replyTo: `"${name}" <${email}>`,
+      subject: `[Contact] ${subject}`,
+      text: `From: ${name} <${email}>\nSubject: ${subject}\n\n${message}`,
+      html: `<p><strong>From:</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;</p>
+<p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+<hr/>
+<p>${escapeHtml(message).replace(/\n/g, '<br/>')}</p>`,
+    });
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('Contact form error:', err);
+    res.status(500).json({ error: 'Failed to send message.' });
   }
 });
 

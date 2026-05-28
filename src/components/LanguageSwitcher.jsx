@@ -46,7 +46,9 @@ export default function LanguageSwitcher({ sidebar }) {
 
             {/* Dropdown menu */}
             {open && (
-                <ul className="absolute right-0 mt-2 w-36 bg-white rounded-md shadow-lg border border-gray-200 overflow-hidden z-50">
+                <ul
+                    className={`absolute right-0 bg-white rounded-md shadow-lg border border-gray-200 overflow-hidden z-50 ${sidebar ? "left-0 right-0 bottom-full mb-2 w-full" : "mt-2 w-36"}`}
+                >
                     {LANGUAGES.map((language) => (
                         <li key={language.code}>
                             <button

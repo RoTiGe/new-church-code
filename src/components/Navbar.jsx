@@ -18,8 +18,9 @@ const Navbar = () => {
     { href: "/", label: messages.links.home },
     { href: "/about", label: messages.links.about },
     { href: "/statement-of-faith", label: messages.links.statementOfFaith },
-    { href: "/impressum", label: messages.links.legalNotice },
     { href: "/gallery", label: messages.links.gallery },
+    { href: "/contact", label: messages.links.contact },
+    { href: "/impressum", label: messages.links.legalNotice },
   ];
 
   return (
