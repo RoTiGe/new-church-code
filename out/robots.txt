@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /donate/verify
+Disallow: /donate/cancel
+
+Host: https://aeg-koeln.de
+Sitemap: https://aeg-koeln.de/sitemap.xml
