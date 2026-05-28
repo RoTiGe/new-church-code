@@ -10,6 +10,7 @@ const routes = [
   { path: "/ministries/youth", priority: 0.7, changeFrequency: "monthly" },
   { path: "/ministries/children", priority: 0.7, changeFrequency: "monthly" },
   { path: "/gallery", priority: 0.6, changeFrequency: "monthly" },
+  { path: "/events", priority: 0.8, changeFrequency: "weekly" },
   { path: "/contact", priority: 0.7, changeFrequency: "yearly" },
   { path: "/donate", priority: 0.8, changeFrequency: "yearly" },
   { path: "/impressum", priority: 0.3, changeFrequency: "yearly" },

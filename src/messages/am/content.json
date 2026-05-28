@@ -341,8 +341,19 @@
       "legalNotice": "ህጋዊ መግለጫ",
       "donate": "ልገሳ",
       "gallery": "ጋለሪ",
+      "events": "ዝግጅቶች",
       "contact": "አግኙን"
     }
+  },
+  "events": {
+    "title": "ዝግጅቶች",
+    "subtitle": "በቅርቡ የሚካሄዱ ስብሰባዎች፣ አምልኮዎች እና ልዩ ፕሮግራሞች።",
+    "upcoming": "በቅርቡ የሚካሄዱ ዝግጅቶች",
+    "timeLabel": "ሰዓት",
+    "locationLabel": "ቦታ",
+    "loading": "ዝግጅቶች በመጫን ላይ…",
+    "empty": "በቅርቡ የሚካሄድ ዝግጅት የለም። እባክዎ ቆይተው ይመለሱ።",
+    "errorLoad": "ዝግጅቶችን መጫን አልተቻለም። እባክዎ ቆይተው ይሞክሩ።"
   },
   "footer": {
     "contact": {
@@ -445,15 +456,27 @@
   "contact": {
     "hero": {
       "title": "አግኙን",
-      "subtitle": "ከእርስዎ መስማት ደስ ይለናል። መልዕክት ይላኩልን፣ በቅርቡ መልስ እንሰጥዎታለን።"
+      "subtitle": "ከእርስዎ መስማት ደስ ይለናል። ለማንኛውም ጥያቄ፣ የጸሎት ጥያቄ ወይም ስለ ቤተክርስቲያናችን የበለጠ ለማወቅ ይጻፉልን።"
     },
     "form": {
-      "name": "ስምዎ",
-      "email": "ኢሜይልዎ",
+      "title": "መልዕክት ላክ",
+      "name": "ስም",
+      "email": "ኢሜይል",
       "subject": "ርዕሰ ጉዳይ",
       "message": "መልዕክት",
+      "namePlaceholder": "ስምዎ",
+      "emailPlaceholder": "ኢሜይልዎ",
+      "subjectPlaceholder": "የመልዕክትዎ ርዕሰ ጉዳይ",
+      "messagePlaceholder": "መልዕክትዎ",
       "submit": "መልዕክት ላክ",
-      "submitting": "በመላክ ላይ..."
+      "submitting": "በመላክ ላይ...",
+      "secureNote": "መልዕክቶች ለቤተክርስቲያኑ ቡድን በደህንነት ይላካሉ።"
+    },
+    "findUs": { "title": "ቦታችን" },
+    "callUs": { "title": "ይደውሉልን" },
+    "serviceTimes": {
+      "title": "የአምልኮ ሰዓቶች",
+      "schedule": "ቅዳሜ 3:00 PM – 5:00 PM"
     },
     "info": {
       "address": "Regentenstraße 78-80, 51063 Köln",

@@ -32,3 +32,6 @@ Thumbs.db
 /next-env.d.ts
 
 # Note: /out/ is INTENTIONALLY tracked. It is the static-export artifact uploaded to the server.
+
+# Runtime data (events, uploaded images) - lives on the deployed server, never committed
+/data/

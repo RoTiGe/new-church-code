@@ -19,6 +19,7 @@ const Navbar = () => {
     { href: "/about", label: messages.links.about },
     { href: "/statement-of-faith", label: messages.links.statementOfFaith },
     { href: "/gallery", label: messages.links.gallery },
+    { href: "/events", label: messages.links.events },
     { href: "/contact", label: messages.links.contact },
     { href: "/impressum", label: messages.links.legalNotice },
   ];

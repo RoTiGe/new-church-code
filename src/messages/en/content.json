@@ -341,8 +341,19 @@
       "legalNotice": "Legal Notice",
       "donate": "Donate",
       "gallery": "Gallery",
+      "events": "Events",
       "contact": "Contact"
     }
+  },
+  "events": {
+    "title": "Events",
+    "subtitle": "Upcoming gatherings, services, and special programs.",
+    "upcoming": "Upcoming Events",
+    "timeLabel": "Time",
+    "locationLabel": "Location",
+    "loading": "Loading events…",
+    "empty": "No upcoming events. Check back soon.",
+    "errorLoad": "Could not load events. Please try again later."
   },
   "footer": {
     "contact": {
@@ -445,15 +456,27 @@
   "contact": {
     "hero": {
       "title": "Contact Us",
-      "subtitle": "We’d love to hear from you. Send us a message and we’ll reply as soon as we can."
+      "subtitle": "We’d love to hear from you. Reach out with any questions, prayer requests, or to learn more about our church and community."
     },
     "form": {
-      "name": "Your name",
-      "email": "Your email",
+      "title": "Send a Message",
+      "name": "Name",
+      "email": "Email",
       "subject": "Subject",
       "message": "Message",
-      "submit": "Send message",
-      "submitting": "Sending..."
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "Your email",
+      "subjectPlaceholder": "Subject of your message",
+      "messagePlaceholder": "Your message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "secureNote": "Messages will be sent securely to the church team."
+    },
+    "findUs": { "title": "Find Us" },
+    "callUs": { "title": "Call Us" },
+    "serviceTimes": {
+      "title": "Service Times",
+      "schedule": "Saturday 3:00 PM – 5:00 PM"
     },
     "info": {
       "address": "Regentenstraße 78-80, 51063 Köln",

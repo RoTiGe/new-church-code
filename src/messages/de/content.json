@@ -341,8 +341,19 @@
       "legalNotice": "Impressum",
       "donate": "Spenden",
       "gallery": "Galerie",
+      "events": "Veranstaltungen",
       "contact": "Kontakt"
     }
+  },
+  "events": {
+    "title": "Veranstaltungen",
+    "subtitle": "Bevorstehende Versammlungen, Gottesdienste und besondere Programme.",
+    "upcoming": "Bevorstehende Veranstaltungen",
+    "timeLabel": "Uhrzeit",
+    "locationLabel": "Ort",
+    "loading": "Veranstaltungen werden geladen…",
+    "empty": "Keine bevorstehenden Veranstaltungen. Schauen Sie bald wieder vorbei.",
+    "errorLoad": "Veranstaltungen konnten nicht geladen werden. Bitte später erneut versuchen."
   },
   "footer": {
     "contact": {
@@ -445,15 +456,27 @@
   "contact": {
     "hero": {
       "title": "Kontakt",
-      "subtitle": "Wir freuen uns, von Ihnen zu hören. Senden Sie uns eine Nachricht und wir antworten so schnell wie möglich."
+      "subtitle": "Wir freuen uns, von Ihnen zu hören. Schreiben Sie uns bei Fragen, Gebetsanliegen oder um mehr über unsere Gemeinde zu erfahren."
     },
     "form": {
-      "name": "Ihr Name",
-      "email": "Ihre E-Mail",
+      "title": "Nachricht senden",
+      "name": "Name",
+      "email": "E-Mail",
       "subject": "Betreff",
       "message": "Nachricht",
+      "namePlaceholder": "Ihr Name",
+      "emailPlaceholder": "Ihre E-Mail",
+      "subjectPlaceholder": "Betreff Ihrer Nachricht",
+      "messagePlaceholder": "Ihre Nachricht",
       "submit": "Nachricht senden",
-      "submitting": "Wird gesendet..."
+      "submitting": "Wird gesendet...",
+      "secureNote": "Nachrichten werden sicher an das Kirchenteam gesendet."
+    },
+    "findUs": { "title": "So finden Sie uns" },
+    "callUs": { "title": "Rufen Sie uns an" },
+    "serviceTimes": {
+      "title": "Gottesdienstzeiten",
+      "schedule": "Samstag 15:00 – 17:00 Uhr"
     },
     "info": {
       "address": "Regentenstraße 78-80, 51063 Köln",
