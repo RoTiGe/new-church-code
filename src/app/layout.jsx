@@ -18,7 +18,7 @@ const sourceSans = Source_Sans_3({
   display: "swap",
 });
 
-const SITE_URL = "https://aeg-koeln.de";
+const SITE_URL = "https://eec-cologne.com";
 const SITE_NAME = "Ethiopian Evangelical Church of Cologne Mülheim";
 const DEFAULT_DESCRIPTION =
   "Ethiopian Evangelical Church in Cologne Mülheim — Sunday worship, youth and children's ministries, prayer, and Bible-centered community in Köln.";

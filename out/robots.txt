@@ -4,5 +4,5 @@ Disallow: /api/
 Disallow: /donate/verify
 Disallow: /donate/cancel
 
-Host: https://aeg-koeln.de
-Sitemap: https://aeg-koeln.de/sitemap.xml
+Host: https://eec-cologne.com
+Sitemap: https://eec-cologne.com/sitemap.xml

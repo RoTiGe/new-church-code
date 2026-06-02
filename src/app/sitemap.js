@@ -1,4 +1,4 @@
-const SITE_URL = "https://aeg-koeln.de";
+const SITE_URL = "https://eec-cologne.com";
 
 export const dynamic = "force-static";
 
